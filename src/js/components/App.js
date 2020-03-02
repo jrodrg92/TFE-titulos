@@ -1,23 +1,53 @@
-import React from "react";
-import List from "./List";
-
+import React, {Component} from "react";
+import Token from './Buttons/CreateToken.js'
 import Web3 from 'web3';
+import Titulo from '../../../build/contracts/Titulo.json';
 
-var web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:7545'));
+class App extends Component {
 
-var acounts = web3.eth.getAccounts();
+    constructor(props){
+        super(props);
+        this.state = { 
+            account : '',
+            contract : '',
 
-acounts.then(function(value){
-    console.log(value[0]);
-    console.log(value[1]);
-    console.log(value[2]);
-})
+        };
+    }
 
-const App = () => (
-    <div>
-        <h2>ARTICLES</h2>
-            <List />
-    </div>
-);
+    async componentWillMount(){
+        await this.loadWeb3();
+        await this.loadBlockchainData();
+    }
+
+    async loadWeb3(){
+        if(window.ethereum){
+            window.web3 = new Web3(window.ethereum);
+            await window.ethereum.enable();
+        }
+        else if(window.web3){
+            window.web3 = new Web3(window.web3.currentprovider);
+        }
+        else{
+            window.alert("no ethereum");
+        }
+    }
+
+    async loadBlockchainData(){
+        const web3 = window.web3;
+        var acounts = await web3.eth.getAccounts();
+        this.setState({account:acounts[0]});
+    }
+
+    render(){
+        return(
+            <div>
+                <h2>ARTICLES</h2>
+                <h2>{this.state.account}</h2>
+                <Token/>
+            </div>
+        )
+    }
+
+}
 
 export default App;

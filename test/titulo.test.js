@@ -10,6 +10,7 @@ contract('Titulo', (accounts) => {
 
     before(async () => {
         contract = await Titulo.deployed();
+        console.log(contract.abi)
     })
 
     describe('deployment', async () => {
