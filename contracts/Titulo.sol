@@ -1,30 +1,28 @@
-pragma solidity ^0.4.23;
+pragma solidity ^0.5.0;
 
-import './ERC721Token.sol';
+import "./ERC721Full.sol";
 
-
-contract Titulo is ERC721Token {
-
+contract Titulo is ERC721Full {
+    
     string[] public titulos;
+    mapping(string => bool) _tituloExiste;
+    
+    constructor() ERC721Full("Titulo", "TITULO") public {
 
-    mapping(address => bool) _tituloExist;
-
-    constructor (string _name, string _symbol) public
-        ERC721Token(_name, _symbol)
-    {
     }
-
-    /**
-        * Custom accessor to create a unique token
-    */
-    function mintUniqueTokenTo(
-        address _to,
-        uint256 _tokenId,
-        string  _tokenURI
-    ) public
-    {
-        super._mint(_to, _tokenId);
-        super._setTokenURI(_tokenId, _tokenURI);
+ 
+    function mint(string memory _titulo) public {
+        
+        require(!_tituloExiste[_titulo]);
+        
+        uint _id = titulos.push(_titulo);
+        
+        //Funcion de minado
+        _mint(msg.sender, _id);
+        
+        //Añadimos el resultado al mapeo
+        _tituloExiste[_titulo] = true;
+        
     }
-
+    
 }

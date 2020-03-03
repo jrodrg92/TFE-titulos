@@ -1,7 +1,8 @@
 import React, {Component} from "react";
-import Token from './Buttons/CreateToken.js'
 import Web3 from 'web3';
-import Titulo from '../../../build/contracts/Titulo.json';
+import GetKey from './Buttons/GetKey'
+import AddKey from './Buttons/AddKey'
+import AddToken from './Buttons/AddToken'
 
 class App extends Component {
 
@@ -43,7 +44,9 @@ class App extends Component {
             <div>
                 <h2>ARTICLES</h2>
                 <h2>{this.state.account}</h2>
-                <Token/>
+                <GetKey/>
+                <AddKey/>
+                <AddToken/>
             </div>
         )
     }
