@@ -1,0 +1,20 @@
+{
+    "accounts" : {
+        "alumno" : {
+            "contrato_alumno_address" : "0xE8538C0bAAFC9A5d7Ac8885f86F03Cde4FaBdB2C",
+            "cuentaAlumno" : "0x3ADd6E32E31a059f336828b91cfc838a7A971b70"
+        },
+        "universidad" : {
+            "contrato_universidad_address" : "0x58a0AAAA27D41790bfe389156c85bbd3Ccf084A6",
+            "cuentaUniversidad" : "0xa89eBeE4C11B12524c3f1DB898E25a46718115d0"
+        },
+        "verificador" : {
+            "contrato_verificador_address" : "0x85DEaec567c685f24613D1a44Ec852A7AC1248F7",
+            "cuentaVerificador" : "0x5d493d46fD94d6cF9b19CE6204D41296f3D8aCf3"
+        },
+        "expedidorTokens" : {
+            "contrato_TokensOwner_address" : "0xc422e012424790c2B650914f9B4EED532A48531c",
+            "cuentaTokensOwner" : "0xF40fC7d97b33B219FE34B5907b961B452f63DC53"
+        }
+    }
+}

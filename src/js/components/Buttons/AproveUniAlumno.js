@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Titulo from '../../../../build/contracts/Titulo.json';
+import ClaimHolder from '../../../../build/contracts/ClaimHolderAlumno.json';
 
 class AddToken extends Component{
 
@@ -24,7 +24,7 @@ class AddToken extends Component{
         if(netWorkData){
             const abi = ClaimHolder.abi;        
             const address = netWorkData.address;                //Direccion contrato alumno
-            var contractToken = await new web3.eth.Contract(abi,"0x5D8A9952dc5c1C2559574a1b3A3DF4D6D6B73A64");
+            var contractToken = await new web3.eth.Contract(abi,address);
             this.setState({abi: abi, 
                            contractToken:contractToken, 
                            address: address});

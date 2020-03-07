@@ -10,13 +10,12 @@ contract('Titulo', (accounts) => {
 
     before(async () => {
         contract = await Titulo.deployed();
-        console.log(contract.abi)
+        console.log(contract.methods)
     })
 
     describe('deployment', async () => {
         it('deploys succesfully', async() => {
             const address = contract.address;
-            console.log(address);
             assert.notEqual(address, '');
         })
 

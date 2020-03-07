@@ -2,39 +2,26 @@
   "contractName": "ERC165",
   "abi": [
     {
-      "inputs": [
-        {
-          "name": "_interfaceId",
-          "type": "bytes4"
-        }
-      ],
+      "inputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "constructor",
-      "constant": true,
-      "name": "supportsInterface",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bool"
-        }
-      ]
+      "type": "constructor"
     },
     {
       "constant": true,
       "inputs": [
         {
+          "internalType": "bytes4",
           "name": "interfaceId",
-          "type": "bytes4",
-          "internalType": "bytes4"
+          "type": "bytes4"
         }
       ],
       "name": "supportsInterface",
       "outputs": [
         {
+          "internalType": "bool",
           "name": "",
-          "type": "bool",
-          "internalType": "bool"
+          "type": "bool"
         }
       ],
       "payable": false,
@@ -139,77 +126,20 @@
             "parameters": {
               "id": 2,
               "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 48,
-                  "name": "_interfaceId",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 53,
-                  "src": "420:19:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes4",
-                    "typeString": "bytes4"
-                  },
-                  "typeName": {
-                    "id": 47,
-                    "name": "bytes4",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "420:6:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes4",
-                      "typeString": "bytes4"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
+              "parameters": [],
               "src": "765:2:0"
             },
             "returnParameters": {
               "id": 3,
               "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 51,
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 53,
-                  "src": "476:4:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bool",
-                    "typeString": "bool"
-                  },
-                  "typeName": {
-                    "id": 50,
-                    "name": "bool",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "476:4:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bool",
-                      "typeString": "bool"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
+              "parameters": [],
               "src": "777:0:0"
             },
             "scope": 26,
             "src": "753:27:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
-            "visibility": "internal",
-            "isConstructor": false,
-            "isDeclaredConst": true,
-            "payable": false
+            "visibility": "internal"
           },
           {
             "body": {
@@ -22720,77 +22650,20 @@
             "parameters": {
               "id": 2,
               "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 48,
-                  "name": "_interfaceId",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 53,
-                  "src": "420:19:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bytes4",
-                    "typeString": "bytes4"
-                  },
-                  "typeName": {
-                    "id": 47,
-                    "name": "bytes4",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "420:6:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bytes4",
-                      "typeString": "bytes4"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
+              "parameters": [],
               "src": "765:2:0"
             },
             "returnParameters": {
               "id": 3,
               "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 51,
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 53,
-                  "src": "476:4:2",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_bool",
-                    "typeString": "bool"
-                  },
-                  "typeName": {
-                    "id": 50,
-                    "name": "bool",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "476:4:2",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_bool",
-                      "typeString": "bool"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
+              "parameters": [],
               "src": "777:0:0"
             },
             "scope": 26,
             "src": "753:27:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
-            "visibility": "internal",
-            "isConstructor": false,
-            "isDeclaredConst": true,
-            "payable": false
+            "visibility": "internal"
           },
           {
             "body": {
@@ -45217,24 +45090,16 @@
   },
   "networks": {},
   "schemaVersion": "3.0.9",
-  "updatedAt": "2020-03-03T20:53:20.054Z",
+  "updatedAt": "2020-03-03T21:13:33.727Z",
   "devdoc": {
     "details": "Implementation of the {IERC165} interface. * Contracts may inherit from this and call {_registerInterface} to declare their support of an interface.",
     "methods": {
       "supportsInterface(bytes4)": {
-        "details": "See {IERC165-supportsInterface}.     * Time complexity O(1), guaranteed to always use less than 30 000 gas.",
-        "params": {
-          "_interfaceId": "The interface identifier, as specified in ERC-165"
-        }
-      }
-    },
-    "title": "ERC165"
-  },
-  "userdoc": {
-    "methods": {
-      "supportsInterface(bytes4)": {
-        "notice": "Query if a contract implements an interface"
+        "details": "See {IERC165-supportsInterface}.     * Time complexity O(1), guaranteed to always use less than 30 000 gas."
       }
     }
+  },
+  "userdoc": {
+    "methods": {}
   }
 }

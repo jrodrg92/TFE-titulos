@@ -24,7 +24,7 @@ class AddKey extends Component {
         if(netWorkData){
             const abi = ClaimHolder.abi;        
             const address = netWorkData.address;                //Direccion contrato universidad
-            var contractToken = await new web3.eth.Contract(abi,"0x82D96056f0d2bD327bf6e6D11c680DDB6d2DC5BB");
+            var contractToken = await new web3.eth.Contract(abi,address);
             this.setState({abi: abi, 
                            contractToken:contractToken, 
                            address: address});
@@ -39,7 +39,7 @@ class AddKey extends Component {
             <div>
                 <br/>
                 <input type="text"></input>
-                <button>AddKey</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;<button>AddKey</button>
             </div>
         )
     }

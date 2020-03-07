@@ -5,17 +5,17 @@
       "constant": true,
       "inputs": [
         {
+          "internalType": "bytes4",
           "name": "interfaceId",
-          "type": "bytes4",
-          "internalType": "bytes4"
+          "type": "bytes4"
         }
       ],
       "name": "supportsInterface",
       "outputs": [
         {
+          "internalType": "bool",
           "name": "",
-          "type": "bool",
-          "internalType": "bool"
+          "type": "bool"
         }
       ],
       "payable": false,
@@ -45084,7 +45084,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.9",
-  "updatedAt": "2020-03-03T20:53:20.737Z",
+  "updatedAt": "2020-03-03T21:13:34.105Z",
   "devdoc": {
     "details": "Interface of the ERC165 standard, as defined in the https://eips.ethereum.org/EIPS/eip-165[EIP]. * Implementers can declare support of contract interfaces, which can then be queried by others ({ERC165Checker}). * For an implementation, see {ERC165}.",
     "methods": {

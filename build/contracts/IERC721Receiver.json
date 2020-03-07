@@ -5,32 +5,32 @@
       "constant": false,
       "inputs": [
         {
+          "internalType": "address",
           "name": "operator",
-          "type": "address",
-          "internalType": "address"
+          "type": "address"
         },
         {
+          "internalType": "address",
           "name": "from",
-          "type": "address",
-          "internalType": "address"
+          "type": "address"
         },
         {
+          "internalType": "uint256",
           "name": "tokenId",
-          "type": "uint256",
-          "internalType": "uint256"
+          "type": "uint256"
         },
         {
+          "internalType": "bytes",
           "name": "data",
-          "type": "bytes",
-          "internalType": "bytes"
+          "type": "bytes"
         }
       ],
       "name": "onERC721Received",
       "outputs": [
         {
+          "internalType": "bytes4",
           "name": "",
-          "type": "bytes4",
-          "internalType": "bytes4"
+          "type": "bytes4"
         }
       ],
       "payable": false,
@@ -45099,7 +45099,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.9",
-  "updatedAt": "2020-03-03T20:53:21.098Z",
+  "updatedAt": "2020-03-03T21:13:34.533Z",
   "devdoc": {
     "details": "Interface for any contract that wants to support safeTransfers from ERC721 asset contracts.",
     "methods": {

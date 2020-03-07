@@ -2,13 +2,13 @@
   "contractName": "IERC721Enumerable",
   "abi": [
     {
-      "constant": true,
+      "anonymous": false,
       "inputs": [
         {
-          "name": "owner",
-          "type": "address",
           "indexed": true,
-          "internalType": "address"
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
         },
         {
           "indexed": true,
@@ -24,25 +24,16 @@
         }
       ],
       "name": "Approval",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "event",
-      "anonymous": false
+      "type": "event"
     },
     {
-      "constant": true,
+      "anonymous": false,
       "inputs": [
         {
-          "name": "owner",
-          "type": "address",
           "indexed": true,
-          "internalType": "address"
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
         },
         {
           "indexed": true,
@@ -58,31 +49,22 @@
         }
       ],
       "name": "ApprovalForAll",
-      "outputs": [
-        {
-          "name": "operator",
-          "type": "address"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "event",
-      "anonymous": false
+      "type": "event"
     },
     {
-      "constant": false,
+      "anonymous": false,
       "inputs": [
         {
-          "name": "from",
-          "type": "address",
           "indexed": true,
-          "internalType": "address"
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
         },
         {
-          "name": "to",
-          "type": "address",
           "indexed": true,
-          "internalType": "address"
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
         },
         {
           "indexed": true,
@@ -92,26 +74,18 @@
         }
       ],
       "name": "Transfer",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "event",
-      "anonymous": false
+      "type": "event"
     },
     {
       "constant": false,
       "inputs": [
         {
+          "internalType": "address",
           "name": "to",
-          "type": "address",
-          "internalType": "address"
+          "type": "address"
         },
         {
-          "name": "tokenId",
-          "type": "uint256",
-          "internalType": "uint256"
-        },
-        {
+          "internalType": "uint256",
           "name": "tokenId",
           "type": "uint256"
         }
@@ -126,17 +100,9 @@
       "constant": true,
       "inputs": [
         {
+          "internalType": "address",
           "name": "owner",
-          "type": "address",
-          "internalType": "address"
-        },
-        {
-          "name": "to",
           "type": "address"
-        },
-        {
-          "name": "tokenId",
-          "type": "uint256"
         }
       ],
       "name": "balanceOf",
@@ -155,17 +121,17 @@
       "constant": true,
       "inputs": [
         {
+          "internalType": "uint256",
           "name": "tokenId",
-          "type": "uint256",
-          "internalType": "uint256"
+          "type": "uint256"
         }
       ],
       "name": "getApproved",
       "outputs": [
         {
+          "internalType": "address",
           "name": "operator",
-          "type": "address",
-          "internalType": "address"
+          "type": "address"
         }
       ],
       "payable": false,
@@ -176,9 +142,9 @@
       "constant": true,
       "inputs": [
         {
+          "internalType": "address",
           "name": "owner",
-          "type": "address",
-          "internalType": "address"
+          "type": "address"
         },
         {
           "internalType": "address",
@@ -189,9 +155,9 @@
       "name": "isApprovedForAll",
       "outputs": [
         {
+          "internalType": "bool",
           "name": "",
-          "type": "bool",
-          "internalType": "bool"
+          "type": "bool"
         }
       ],
       "payable": false,
@@ -202,13 +168,9 @@
       "constant": true,
       "inputs": [
         {
+          "internalType": "uint256",
           "name": "tokenId",
-          "type": "uint256",
-          "internalType": "uint256"
-        },
-        {
-          "name": "_approved",
-          "type": "bool"
+          "type": "uint256"
         }
       ],
       "name": "ownerOf",
@@ -227,23 +189,19 @@
       "constant": false,
       "inputs": [
         {
+          "internalType": "address",
           "name": "from",
-          "type": "address",
-          "internalType": "address"
+          "type": "address"
         },
         {
+          "internalType": "address",
           "name": "to",
-          "type": "address",
-          "internalType": "address"
+          "type": "address"
         },
         {
+          "internalType": "uint256",
           "name": "tokenId",
-          "type": "uint256",
-          "internalType": "uint256"
-        },
-        {
-          "name": "data",
-          "type": "bytes"
+          "type": "uint256"
         }
       ],
       "name": "safeTransferFrom",
@@ -256,14 +214,14 @@
       "constant": false,
       "inputs": [
         {
+          "internalType": "address",
           "name": "from",
-          "type": "address",
-          "internalType": "address"
+          "type": "address"
         },
         {
+          "internalType": "address",
           "name": "to",
-          "type": "address",
-          "internalType": "address"
+          "type": "address"
         },
         {
           "internalType": "uint256",
@@ -277,67 +235,41 @@
         }
       ],
       "name": "safeTransferFrom",
-      "outputs": [
-        {
-          "name": "",
-          "type": "bool"
-        }
-      ],
+      "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
       "type": "function"
     },
     {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "name": "operator",
-          "type": "address",
-          "internalType": "address"
-        },
-        {
-          "indexed": true,
-          "name": "_approved",
-          "type": "bool",
-          "internalType": "bool"
-        },
-        {
-          "indexed": true,
-          "name": "tokenId",
-          "type": "uint256"
-        }
-      ],
-      "name": "setApprovalForAll",
-      "type": "function",
       "constant": false,
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable"
-    },
-    {
-      "anonymous": false,
       "inputs": [
         {
-          "indexed": true,
-          "name": "interfaceId",
-          "type": "bytes4",
-          "internalType": "bytes4"
-        },
-        {
-          "indexed": true,
-          "name": "approved",
+          "internalType": "address",
+          "name": "operator",
           "type": "address"
         },
         {
-          "indexed": true,
-          "name": "tokenId",
-          "type": "uint256"
+          "internalType": "bool",
+          "name": "_approved",
+          "type": "bool"
+        }
+      ],
+      "name": "setApprovalForAll",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "interfaceId",
+          "type": "bytes4"
         }
       ],
       "name": "supportsInterface",
-      "type": "function",
-      "constant": true,
       "outputs": [
         {
           "internalType": "bool",
@@ -346,36 +278,33 @@
         }
       ],
       "payable": false,
-      "stateMutability": "view"
+      "stateMutability": "view",
+      "type": "function"
     },
     {
-      "anonymous": false,
+      "constant": false,
       "inputs": [
         {
-          "indexed": true,
+          "internalType": "address",
           "name": "from",
-          "type": "address",
-          "internalType": "address"
+          "type": "address"
         },
         {
-          "indexed": true,
+          "internalType": "address",
           "name": "to",
-          "type": "address",
-          "internalType": "address"
+          "type": "address"
         },
         {
-          "indexed": false,
+          "internalType": "uint256",
           "name": "tokenId",
-          "type": "uint256",
-          "internalType": "uint256"
+          "type": "uint256"
         }
       ],
       "name": "transferFrom",
-      "type": "function",
-      "constant": false,
       "outputs": [],
       "payable": false,
-      "stateMutability": "nonpayable"
+      "stateMutability": "nonpayable",
+      "type": "function"
     },
     {
       "constant": true,
@@ -383,9 +312,9 @@
       "name": "totalSupply",
       "outputs": [
         {
+          "internalType": "uint256",
           "name": "",
-          "type": "uint256",
-          "internalType": "uint256"
+          "type": "uint256"
         }
       ],
       "payable": false,
@@ -396,22 +325,22 @@
       "constant": true,
       "inputs": [
         {
+          "internalType": "address",
           "name": "owner",
-          "type": "address",
-          "internalType": "address"
+          "type": "address"
         },
         {
+          "internalType": "uint256",
           "name": "index",
-          "type": "uint256",
-          "internalType": "uint256"
+          "type": "uint256"
         }
       ],
       "name": "tokenOfOwnerByIndex",
       "outputs": [
         {
+          "internalType": "uint256",
           "name": "tokenId",
-          "type": "uint256",
-          "internalType": "uint256"
+          "type": "uint256"
         }
       ],
       "payable": false,
@@ -422,17 +351,17 @@
       "constant": true,
       "inputs": [
         {
+          "internalType": "uint256",
           "name": "index",
-          "type": "uint256",
-          "internalType": "uint256"
+          "type": "uint256"
         }
       ],
       "name": "tokenByIndex",
       "outputs": [
         {
+          "internalType": "uint256",
           "name": "",
-          "type": "uint256",
-          "internalType": "uint256"
+          "type": "uint256"
         }
       ],
       "payable": false,
@@ -45501,7 +45430,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.9",
-  "updatedAt": "2020-03-03T20:53:20.930Z",
+  "updatedAt": "2020-03-03T21:13:34.385Z",
   "devdoc": {
     "details": "See https://eips.ethereum.org/EIPS/eip-721",
     "methods": {

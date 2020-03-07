@@ -2,27 +2,21 @@ pragma solidity ^0.5.0;
 
 import "./ERC721Full.sol";
 
-contract Titulo is ERC721Full {
+contract Titulo is ERC721Full {  
     
     string[] public titulos;
-    mapping(string => bool) _tituloExiste;
     
-    constructor() ERC721Full("Titulo", "TITULO") public {
-
+    mapping (string => bool)  _tituloExists;
+    
+    constructor() ERC721Full("Titulo", "TIT") public {
+    
     }
- 
+    
     function mint(string memory _titulo) public {
-        
-        require(!_tituloExiste[_titulo]);
-        
-        uint _id = titulos.push(_titulo);
-        
-        //Funcion de minado
-        _mint(msg.sender, _id);
-        
-        //Añadimos el resultado al mapeo
-        _tituloExiste[_titulo] = true;
-        
+        require(!_tituloExists[_titulo]);
+        uint _ide = titulos.push(_titulo);
+        _mint(msg.sender, _ide);
+        _tituloExists[_titulo] = true;
     }
     
 }
