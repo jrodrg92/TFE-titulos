@@ -25,11 +25,11 @@ class AddToken extends Component{
 
     async loadContratoTitulos(){
         const netWorkId = await this.state.web3.eth.net.getId();
-        const netWorkData = Titulo.networks;
+        const netWorkData = Titulo.networks[netWorkId];
         if(netWorkData){
             const abi = Titulo.abi;
             const address = netWorkData.address;
-            var contractToken = await new web3.eth.Contract(abi,"0xB4DDf9f30F1324Ca86A0060A77110709Aa108353");
+            var contractToken = await new web3.eth.Contract(abi,address);
             this.setState({abi: abi, 
                            contractToken:contractToken, 
                            address: address});
@@ -39,30 +39,36 @@ class AddToken extends Component{
         }
     }
 
-    async createToken(){
+    async createToken(nombre){
         await window.ethereum.enable();
-        await this.state.contractToken.methods.mint("Experto universitario").send({from : "0xB4DDf9f30F1324Ca86A0060A77110709Aa108353", gas: 500000}, function(error, result){
-            if(!error){
-                console.log(result);
-            }
-            else  
-                console.error(error);
-          });
+        await this.state.contractToken.methods.mint(nombre).send({from : "0xB4DDf9f30F1324Ca86A0060A77110709Aa108353", gas: 500000}).on('receipt', function(receipt){
+            console.log(receipt);                  
+                if (receipt.events.Transfer) {
+                    document.getElementById("txto").value = receipt.events.Transfer.returnValues.tokenId;
+                }
+                else {
+                    console.log("error");
+                }                                    
+            });  
     }
 
     async consultarToken(idToken){
         await window.ethereum.enable();
-        this.state.contractToken.methods.ownerOf(idToken).send( {from: "0xB4DDf9f30F1324Ca86A0060A77110709Aa108353", gas: 500000})
-        .on('receipt', function(receipt){  
-                console.log(receipt);
-            });
+        try {
+            await this.state.contractToken.methods.totalSupply().call();
+        }
+        catch (error) {
+            console.log(error.message);
+        } 
+    
     }
 
     render(){
         return(
             <div>
                 <br/>
-                <button onClick={async () => {await this.createToken();}}>AddToken</button>
+                <input type="text" id="tkn"></input>
+                &nbsp;&nbsp;&nbsp;&nbsp;<button onClick={async () => {await this.createToken(document.getElementById("tkn").value);}}>AddToken</button>
                 <br/>
                 <br/>   
                 <input type="text" id="txto"></input>
